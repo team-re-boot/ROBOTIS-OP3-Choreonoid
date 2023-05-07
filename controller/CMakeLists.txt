@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 
 project(Controller)
 
@@ -10,6 +10,7 @@ include(FindPkgConfig)
 pkg_check_modules(cnoid_plugin REQUIRED choreonoid-body-plugin)
 
 include_directories(
+	include
 	${cnoid_plugin_INCLUDE_DIRS}
 	${Boost_INCLUDE_DIRS}
 )
@@ -20,11 +21,10 @@ link_directories(
 )
 
 set(MOTION_ENGINE_SRC
-	MotionEngine.hpp MotionEngine.cpp
-	utils.hpp
+	src/MotionEngine.cpp
 )
 
-add_library(Controller SHARED Controller.cpp ${MOTION_ENGINE_SRC})
+add_library(Controller SHARED src/Controller.cpp ${MOTION_ENGINE_SRC})
 set_target_properties(Controller PROPERTIES PREFIX "")
 
 set(target Controller)
