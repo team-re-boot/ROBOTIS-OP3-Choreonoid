@@ -4,7 +4,7 @@ project(Controller)
 
 find_package(Boost COMPONENTS system thread filesystem)
 
-add_definitions(-std=c++14)
+add_definitions(-std=c++17)
 
 include(FindPkgConfig)
 pkg_check_modules(cnoid_plugin REQUIRED choreonoid-body-plugin)
@@ -21,7 +21,6 @@ link_directories(
 
 set(MOTION_ENGINE_SRC
 	MotionEngine.hpp MotionEngine.cpp
-	Kinematics.hpp Kinematics.cpp
 	utils.hpp
 )
 
