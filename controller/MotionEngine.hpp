@@ -1,15 +1,13 @@
 #ifndef _MOTION_ENGINE_HPP_
 #define _MOTION_ENGINE_HPP_
 
+#include "utils.hpp"
+
 #include <cnoid/EigenUtil>
 #include <cnoid/ExecutablePath>
 #include <cnoid/JointPath>
 #include <cnoid/Link>
 #include <cnoid/SimpleController>
-#include <cnoid/Joystick>
-
-#include "Kinematics.hpp"
-#include "utils.hpp"
 
 #include <iostream>
 
@@ -22,24 +20,13 @@ public:
 
   void control();
 
-  void jointControl();
-
-  void receiveCommand(double * l_stick, double * r_stick);
+  void joint_control();
 
 private:
-  std::shared_ptr<Kinematics> kinematics_;
-  cnoid::Joystick joystick_;
-
   cnoid::Body * body_;
 
   double dt_;
   std::map<std::string, JointAngle> joint_angles_;
-
-  cnoid::Vector3 right_foot_pos_;
-  cnoid::Vector3 right_foot_rot_;
-  cnoid::Vector3 left_foot_pos_;
-  cnoid::Vector3 left_foot_rot_;
-
 };
 
 #endif
