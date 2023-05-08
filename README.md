@@ -10,7 +10,7 @@ https://github.com/choreonoid/choreonoid
 ```bash
 mkdir workspace && cd workspace
 git clone git@github.com:team-re-boot/ROBOTIS-OP3-Choreonoid.git
-cd Rgit@github.com:team-re-boot/ROBOTIS-OP3-Choreonoid.git
+cd git@github.com:team-re-boot/ROBOTIS-OP3-Choreonoid.git
 mkdir build && cd build
 cmake ..
 sudo make install
