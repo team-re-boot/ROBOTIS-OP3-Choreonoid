@@ -20,10 +20,11 @@ items:
           name: "ROBOTIS-OP3"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data: 
             file: "${HOME}/workspace/navigation/install/op3_description/share/op3_description/model/robotis_op3.body"
-            rootPosition: [ 0.000652450198, 0, 0.275722061 ]
+            rootPosition: [ 0.000652450198, 0, 0.267264471 ]
             format: CHOREONOID-BODY
             rootAttitude: [ 
               1, 0, 0, 
@@ -74,20 +75,20 @@ items:
                 export_symbols: false
         - 
           id: 4
-          name: "Floor"
+          name: "field"
           plugin: Body
           class: BodyItem
           is_checked: true
           data: 
-            file: "${SHARE}/model/misc/floor.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ 0, 0, -0.1 ]
+            file: "../model/meshes/field.dae"
+            format: GENERAL-3D-MODEL
+            rootPosition: [ 0, 0, 0 ]
             rootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
               0, 0, 1 ]
             jointPositions: [  ]
-            initialRootPosition: [ 0, 0, -0.1 ]
+            initialRootPosition: [ 0, 0, 0 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -174,9 +175,9 @@ views:
         - 
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 1.012, 0.800592, 0.738331 ]
-          direction: [ -0.726479, -0.568083, -0.386665 ]
-          up: [ -0.304595, -0.238184, 0.92222 ]
+          eye: [ -2.07238, 1.71728, 1.4845 ]
+          direction: [ 0.76616, -0.533143, -0.358829 ]
+          up: [ 0.294535, -0.204956, 0.933403 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -198,7 +199,7 @@ views:
       point_size: 1
       field_of_view: 35
       clip_distances: [ 0.04, 200 ]
-      floorGrid: true
+      floorGrid: false
       floorGridSpan: 10
       floorGridInterval: 0.5
       xzGrid: false
@@ -238,7 +239,7 @@ views:
     class: LinkPositionView
     mounted: true
     state: 
-      coordinate_mode: world
+      coordinate_mode: base
       preferred_coordinate_mode: base
       show_rpy: true
       unique_rpy: false
@@ -280,8 +281,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body: 
   "BodySelectionManager": 
-    current_body_item: 4
-    current_link: "Floor"
+    current_body_item: 2
+    current_link: "body_link"
   "KinematicFaultChecker": 
     checkJointPositions: true
     angleMargin: 0
