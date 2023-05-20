@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Controller)
+project(controller)
 
 find_package(Boost COMPONENTS system thread filesystem)
 
@@ -21,18 +21,18 @@ link_directories(
 )
 
 set(MOTION_ENGINE_SRC
-	src/MotionEngine.cpp
+	src/motion_engine.cpp
 )
 
-add_library(Controller SHARED src/Controller.cpp ${MOTION_ENGINE_SRC})
-set_target_properties(Controller PROPERTIES PREFIX "")
+add_library(controller SHARED src/controller.cpp ${MOTION_ENGINE_SRC})
+set_target_properties(controller PROPERTIES PREFIX "")
 
-set(target Controller)
-target_link_libraries(Controller
+set(target controller)
+target_link_libraries(controller
 	${cnoid_plugin_LIBRARIES}
 	${Boost_LIBRARIES}
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
-install(TARGETS Controller LIBRARY DESTINATION /usr/local/lib/choreonoid-1.8/simplecontroller)
+install(TARGETS controller LIBRARY DESTINATION /usr/local/lib/choreonoid-1.8/simplecontroller)
