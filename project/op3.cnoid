@@ -20,25 +20,27 @@ items:
           name: "ROBOTIS-OP3"
           plugin: Body
           class: BodyItem
-          is_selected: true
           is_checked: true
           data: 
             file: "${HOME}/workspace/navigation/install/op3_description/share/op3_description/model/robotis_op3.body"
-            rootPosition: [ 0.000652450198, 0, 0.267264471 ]
+            rootPosition: [ -0.000170208347, -0.00118221221, 0.252844932 ]
             format: CHOREONOID-BODY
             rootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
               0, 0, 1 ]
             jointDisplacements: [ 
-              0, 0, -20, 40, -20, 0, 0, 0, -20, 40, 
-              -20, 0, 0, -60, -30, 0, 60, 30, 0, 0 ]
+              0, 0, 0, -30, 60, -30, 0, 0, 0, -30, 
+              60, -30, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0 ]
             initialJointDisplacements: [ 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-              0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0 ]
             jointPositions: [ 
-              0, 0, -0.349066, 0.698132, -0.349066, 0, 0, 0, -0.349066, 0.698132, 
-              -0.349066, 0, 0, -1.0472, -0.523599, 0, 1.0472, 0.523599, 0, 0 ]
+              0, 0, 0, -0.523599, 1.0472, -0.523599, 0, 0, 0, -0.523599, 
+              1.0472, -0.523599, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0 ]
             initialRootPosition: [ 0, 0, 0 ]
             initialRootAttitude: [ 
               1, 0, 0, 
@@ -46,7 +48,8 @@ items:
               0, 0, 1 ]
             initialJointPositions: [ 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-              0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+              0 ]
             fix_root: false
             collisionDetection: true
             selfCollisionDetection: false
@@ -69,7 +72,7 @@ items:
               data: 
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "Controller"
+                controller: "controller"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -143,7 +146,7 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      expanded: [ 1, 2 ]
+      expanded: [ 1, 2, 3 ]
   - 
     id: 2
     plugin: Base
@@ -175,9 +178,9 @@ views:
         - 
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ -2.07238, 1.71728, 1.4845 ]
-          direction: [ 0.76616, -0.533143, -0.358829 ]
-          up: [ 0.294535, -0.204956, 0.933403 ]
+          eye: [ 1.1101, 0.851411, 0.771075 ]
+          direction: [ -0.734965, -0.586656, -0.34009 ]
+          up: [ -0.265798, -0.212162, 0.940393 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -279,6 +282,41 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
+  "BodyMotionGenerationBar": 
+    autoGenerationForNewBody: true
+    balancer: false
+    autoGeneration: false
+    timeScaleRatio: 1
+    preInitialDuration: 1
+    postFinalDuration: 1
+    onlyTimeBarRange: false
+    output_new_body_motion_item: true
+    step_trajectory_adjustment_mode: stealthy
+    stealthyHeightRatioThresh: 2
+    flatLiftingHeight: 0.005
+    flatLandingHeight: 0.005
+    impactReductionHeight: 0.005
+    impactReductionTime: 0.04
+    toe_contact_time: 0.1
+    toe_contact_angle: 10
+    autoZmp: true
+    minZmpTransitionTime: 0.1
+    zmpCenteringTimeThresh: 0.03
+    zmpTimeMarginBeforeLiftingSpin: 0
+    zmpMaxDistanceFromCenter: 0.02
+    allLinkPositions: false
+    lipSyncMix: false
+    timeToStartBalancer: 0
+    balancerIterations: 2
+    plainBalancerMode: false
+    boundaryConditionType: position
+    boundarySmootherType: quintic
+    boundarySmootherTime: 0.5
+    boundaryCmAdjustment: false
+    boundaryCmAdjustmentTime: 1
+    waistHeightRelaxation: false
+    gravity: 9.8
+    dynamicsTimeRatio: 1
 Body: 
   "BodySelectionManager": 
     current_body_item: 2
