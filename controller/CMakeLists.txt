@@ -27,7 +27,7 @@ set(MOTION_ENGINE_SRC
 	src/link.cpp
 )
 
-add_library(controller SHARED src/controller.cpp ${MOTION_ENGINE_SRC})
+add_library(controller SHARED controller.cpp ${MOTION_ENGINE_SRC})
 set_target_properties(controller PROPERTIES PREFIX "")
 
 set(target controller)
