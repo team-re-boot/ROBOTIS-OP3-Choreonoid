@@ -24,7 +24,7 @@ const double d_gain[] = {
   10,5
 };
 
-struct JointAngle
+struct JointInfo
 {
   int id;
   std::string name;
