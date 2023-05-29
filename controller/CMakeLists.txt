@@ -25,6 +25,7 @@ set(MOTION_ENGINE_SRC
 	src/motion_engine.cpp
 	src/kinematics.cpp
 	src/link.cpp
+	src/lib/preview_control.cpp
 )
 
 add_library(controller SHARED controller.cpp ${MOTION_ENGINE_SRC})
@@ -35,6 +36,8 @@ target_link_libraries(controller
 	${cnoid_plugin_LIBRARIES}
 	${Boost_LIBRARIES}
 )
+
+add_executable(test_preview_control test/test_preview_control.cpp ${MOTION_ENGINE_SRC})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
