@@ -20,6 +20,10 @@ sudo make install
 cd workspace/ROBOTIS-OP3-Choreonoid
 choreonoid project/op3.cnoid
 ```
-<div align="center">
+<div align="left">
 <img src="img/op3.png" width="500">
 </div>
+
+## Walk Motion Demo
+
+[![](https://img.youtube.com/vi/zbbqpCDPhYY/0.jpg)](https://www.youtube.com/watch?v=zbbqpCDPhYY)
