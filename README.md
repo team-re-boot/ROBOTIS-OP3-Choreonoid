@@ -1,5 +1,7 @@
 # ROBOTIS-OP3-Choreonoid
 
+**[Click here for Core Package of Walk Pattern Generator](https://github.com/team-re-boot/MotionEngine)**
+
 ## How to use
 
 ### 1. Install Choreonoid
