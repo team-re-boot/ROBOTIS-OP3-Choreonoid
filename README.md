@@ -28,4 +28,4 @@ choreonoid project/op3.cnoid
 
 ## Walk Motion Demo
 
-[![](https://img.youtube.com/vi/_YvUQoJxua0/0.jpg)](https://www.youtube.com/watch?v=_YvUQoJxua0)
+[![](https://img.youtube.com/vi/uFtyY_FHnGM/0.jpg)](https://www.youtube.com/watch?v=uFtyY_FHnGM)
